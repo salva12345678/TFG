@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/grupo"
+        android:title="@string/grupos"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_grupo"
+        />
+
+    <item
+        android:id="@+id/migrupo"
+        android:title="@string/migrupo"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_migrupo"
+        />
+
+    <item
+        android:id="@+id/Actividad"
+        android:title="@string/actividad"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_actividad"
+        />
+
+    <item
+        android:id="@+id/Misactividades"
+        android:title="@string/miactividad"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_miactividad"
+
+        />
+
+
+
+
+
+</menu>

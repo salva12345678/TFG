@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Incontro</string>
+    <string name="name_perfil">Perfil</string>
+    <string name="grupos">Grupos</string>
+    <string name="migrupo">Mis grupos</string>
+    <string name="actividad">Actividades</string>
+    <string name="miactividad">Mis actividades</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
