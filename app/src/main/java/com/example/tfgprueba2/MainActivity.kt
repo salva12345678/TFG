@@ -1,52 +1,154 @@
 package com.example.tfgprueba2
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.tfgprueba2.Dataclass.Grupos
+import com.example.tfgprueba2.Dataclass.Usuario
 import com.example.tfgprueba2.databinding.ActivityMainBinding
-import com.example.tfgprueba2.databinding.FragmentGroupBinding
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import java.io.Serializable
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding:ActivityMainBinding
-    //private lateinit var gBinding: FragmentGroupBinding
-
 
     private lateinit var mActiveFragment:Fragment
     private lateinit var mFragmentManager: FragmentManager
 
-    private lateinit var mGridLayout: GridLayoutManager
-
     lateinit var grupos: MutableList<Grupos>
 
-    //var c: Connection? = null
 
-    var db = conect()
+    //var db = conect()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding= ActivityMainBinding.inflate(layoutInflater)
-        //gBinding= FragmentGroupBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        ///las 4 vistas
         setupBottomNav()
-        //setupRecyclegrupo()
+
+        mBinding.botonCrearGrupos.setOnClickListener {
+
+            enviaracreaciongrupo()
+
+        }
+
+        mBinding.botonCrearActividad.setOnClickListener {
+
+            enviaracreacionactividad()
+
+        }
+
+        mBinding.perfil.setOnClickListener {
+            enviaraperfil()
+        }
+
+        mBinding.house.setOnClickListener {
+            enviaracreacionhouse()
+        }
+
 
 
     }
 
 
+    fun enviaracreacionactividad(){
+        val i = Intent(this, CrearActividad::class.java)
+         var usuario=who()
+         i.putExtra("idUsuario",usuario.idusuario)
+         i.putExtra("Nombre",usuario.nombre)
+         i.putExtra("contraseña",usuario.contraseña)
+         i.putExtra("foto",usuario.foto)
+         i.putExtra("biografia",usuario.biografia)
+         i.putExtra("fecha",usuario.fecha)
+         i.putExtra("direccion",usuario.direccion)
+        startActivity(i)
 
+    }
+
+
+    fun enviaracreaciongrupo(){
+        val i = Intent(this, CrearGrupoActivity2::class.java)
+         var usuario=who()
+         i.putExtra("idUsuario",usuario.idusuario)
+         i.putExtra("Nombre",usuario.nombre)
+         i.putExtra("contraseña",usuario.contraseña)
+         i.putExtra("foto",usuario.foto)
+         i.putExtra("biografia",usuario.biografia)
+         i.putExtra("fecha",usuario.fecha)
+         i.putExtra("direccion",usuario.direccion)
+        startActivity(i)
+
+    }
+
+
+    fun enviaracreaciongrupo1(){
+        val i = Intent(this, CrearGrupoActivity2::class.java)
+        var usuario=who()
+        i.putExtra("idUsuario", usuario as Serializable?)
+        startActivity(i)
+    }
+
+    fun recibidoacreaciongrupo2(){
+        val objetoIntent:Intent=intent
+
+        var usuario = intent.getSerializableExtra("idUsuario") as Usuario?
+
+        usuario?.idusuario
+    }
+
+
+
+    fun enviaracreacionhouse(){
+        val i = Intent(this, CrearActivityEstablecimiento::class.java)
+        var usuario=who()
+        i.putExtra("idUsuario",usuario.idusuario)
+        i.putExtra("Nombre",usuario.nombre)
+        i.putExtra("contraseña",usuario.contraseña)
+        i.putExtra("foto",usuario.foto)
+        i.putExtra("biografia",usuario.biografia)
+        i.putExtra("fecha",usuario.fecha)
+        i.putExtra("direccion",usuario.direccion)
+        startActivity(i)
+
+    }
+
+    //enviar
+    fun enviaraperfil(){
+        val i = Intent(this, PerfilActivity::class.java)
+        var usuario=who()
+        i.putExtra("idUsuario",usuario.idusuario)
+        i.putExtra("Nombre",usuario.nombre)
+        i.putExtra("contraseña",usuario.contraseña)
+        i.putExtra("foto",usuario.foto)
+        i.putExtra("biografia",usuario.biografia)
+        i.putExtra("fecha",usuario.fecha)
+        i.putExtra("direccion",usuario.direccion)
+        startActivity(i)
+
+    }
+
+
+    ///cargaremos los datos del usuario
+    fun who():Usuario{
+
+        val objetoIntent:Intent=intent
+
+        var id=objetoIntent.getIntExtra("idUsuario",1)
+
+        var nombre=objetoIntent.getStringExtra("Nombre")
+        var contraseña=objetoIntent.getStringExtra("contraseña")
+        var foto=objetoIntent.getStringExtra("foto")
+        var biografia=objetoIntent.getStringExtra("biografia")
+        var fecha= objetoIntent.getStringExtra("fecha")
+        var direccion=objetoIntent.getStringExtra("direccion")
+
+        val usuario= Usuario(idusuario=id, nombre= nombre.toString(), contraseña=contraseña.toString(),foto=foto.toString(), biografia=biografia.toString(), fecha=fecha.toString(), direccion=direccion.toString())
+        return usuario
+    }
 
 
     ///fragmentos de los botones  de abajo
@@ -116,27 +218,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
- /*   private fun setupRecyclegrupo(){
-
-        //base de datos
-        db?.Conect()
-        grupos=db?.selectgrupo()
-
-        mGridLayout= GridLayoutManager(this,1)
-
-        val adapter1=GrupoAdaptador(grupos)
-
-        val grupo=Grupos(1,"aleman","grupoaleman",20,"grupo de alemanes en españa","www.ggoo.es")
-        adapter1.add(grupo)
-
-        gBinding.recycleviewgrupo.apply {
-            setHasFixedSize(true)
-            layoutManager=mGridLayout
-            adapter=adapter1
-
-        }
-
-
-    }*/
 
 }
+

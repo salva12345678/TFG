@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sign">
+
+    <LinearLayout
+        android:id="@+id/login_complete"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/commo_padding_default">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_login"
+            app:helperText="@string/helper_requirer"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_login_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:hint="@string/hint_password"
+            app:helperText="@string/helper_requirer"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:startIconDrawable="@drawable/ic_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="@integer/counter_max_contraseña"
+                android:inputType="textPassword" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:hint="@string/foto_register"
+            app:helperText="@string/helper_requirer"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:startIconDrawable="@drawable/ic_foto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/url_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="@integer/counter_max_contraseña"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:hint="@string/biografia_register"
+            app:helperText="@string/helper_requirer"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:startIconDrawable="@drawable/ic_history">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_biografia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="@integer/counter_max_contraseña"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:hint="@string/fecha_register"
+            app:helperText="@string/helper_requirer"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:startIconDrawable="@drawable/ic_cumpleaos">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="@integer/counter_max_contraseña"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:hint="@string/direccion_register"
+            app:helperText="@string/helper_requirer"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:startIconDrawable="@drawable/ic_history">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/locateSign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="@integer/counter_max_contraseña"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_registrase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrarse"
+            android:clickable="true"
+            android:paddingTop="@dimen/commo_padding_default"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:backgroundTint="#03D3DA"
+            app:layout_constraintTop_toBottomOf="@+id/login_complete"/>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

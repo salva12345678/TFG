@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearActividad">
+
+    <LinearLayout
+        android:id="@+id/register_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:padding="@dimen/commo_padding_default">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_actividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_actividty"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_house"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_nombreactividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/Grupoperteneciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Grupo:" />
+
+        <Spinner
+            android:id="@+id/mySpinnergrupo"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/actividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Tamaño de la actividad:" />
+
+        <Spinner
+            android:id="@+id/mySpinnertamaio"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/lugardelaactividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Lugar de la actividad:" />
+
+        <Spinner
+            android:id="@+id/mySpinnerlugar"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/durecionnactividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Duracion de la actividad:" />
+
+        <Spinner
+            android:id="@+id/mySpinnerduracion"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/relacionactividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Relacion de la actividad:" />
+
+        <Spinner
+            android:id="@+id/mySpinnerrelacion"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/relacionCompetencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Competencias:" />
+
+        <Spinner
+            android:id="@+id/mySpinnercompe"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/cargarcompetencia"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icons8_producto_24" />
+
+        <TextView
+            android:id="@+id/relaciontipodeactividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Tipo de actividad:" />
+
+        <Spinner
+            android:id="@+id/mySpinneractividad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/cargaractividad"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icons8_producto_24" />
+
+        <TextView
+            android:id="@+id/relacionactividad1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Parámetro 1:" />
+
+
+
+        <Spinner
+            android:id="@+id/parametro1"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <ImageButton
+            android:id="@+id/cargarParámetro"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icons8_producto_24" />
+
+
+        <Spinner
+            android:id="@+id/parametro1_2"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:hint="@string/tipe_esta"
+            app:endIconMode="clear_text" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_descripcionactividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_descipcactivit"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_map"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_fechaactividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_dateactivity"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_date"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_fechaactividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_registaractividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrarse_actividad"
+            android:clickable="true"
+            android:paddingTop="@dimen/commo_padding_default"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:backgroundTint="#03D3DA" />
+
+
+
+    </LinearLayout>
+
+</ScrollView>

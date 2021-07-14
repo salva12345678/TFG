@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearGrupoActivity2">
+
+    <LinearLayout
+        android:id="@+id/register_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:padding="@dimen/commo_padding_default">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_grupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_group"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_house"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_nombre_grupo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/Idioma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Idioma:" />
+
+        <Spinner
+            android:id="@+id/mySpinneridiomagrupo"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/Tipotamanio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Tamaño del grupo:" />
+
+        <Spinner
+            android:id="@+id/mySpinnertamaiogrupo"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_descipc"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_map"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_grupo_proposito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_linedes"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_url"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_money"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_grupo_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_fechagrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_date"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_date"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_fechagrupo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_registarGrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrarse_grupo"
+            android:clickable="true"
+            android:paddingTop="@dimen/commo_padding_default"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:backgroundTint="#03D3DA"
+            app:layout_constraintTop_toBottomOf="@+id/login_complete"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

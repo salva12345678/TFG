@@ -5,4 +5,15 @@
     <dimen name="commo_padding_default">16dp</dimen>
     <dimen name="item_card_height">250dp</dimen>
     <dimen name="common_padding_min">8dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="commo_padding_hori">-16</dimen>
+    <dimen name="common_padding_default">16</dimen>
+
+    <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="photo_size_thumb">88dp</dimen>
+    <dimen name="item_card_height_low">240dp</dimen>
+    <dimen name="item_card_height_low_">200dp</dimen>
+    <dimen name="item_card_height_lo">190dp</dimen>
 </resources>
