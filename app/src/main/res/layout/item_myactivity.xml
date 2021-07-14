@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="320dp"
+    android:layout_marginTop="@dimen/common_padding_min"
+    android:layout_marginStart="@dimen/common_padding_min"
+    android:layout_marginEnd="@dimen/commo_padding_min">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarjetamyactividad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/Quitarsedelaactividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:layout_marginEnd="@dimen/commo_padding_default"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_quit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TitulomiActividadtarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            tools:text="Título de la actividad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintBottom_toBottomOf="@id/Quitarsedelaactividad"
+            />
+
+        <TextView
+            android:id="@+id/fechamiActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            tools:text="Fecha de la Actividad"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TitulomiActividadtarjeta"/>
+
+        <TextView
+            android:id="@+id/DescripcionmiActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            tools:text="Descripción de la actividad"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fechamiActividadTarjeta"/>
+        <TextView
+            android:id="@+id/PropietariomitituloActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Creador de la actividad:"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/DescripcionmiActividadTarjeta"/>
+
+        <TextView
+            android:id="@+id/PropietariomiActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/DescripcionmiActividadTarjeta"
+            tools:text="Creador" />
+
+        <TextView
+            android:id="@+id/tipoTitulomiActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Tipo de actividad:"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PropietariomitituloActividadTarjeta"/>
+
+        <TextView
+            android:id="@+id/tipomiActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/PropietariomiActividadTarjeta"
+            tools:text="Tipos de actividades:" />
+
+        <TextView
+            android:id="@+id/Titulocompetencia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Competencias:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tipoTitulomiActividadTarjeta"
+            />
+
+        <TextView
+            android:id="@+id/competencias"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="121dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/tipoTitulomiActividadTarjeta"
+            tools:text="competencias" />
+
+        <TextView
+            android:id="@+id/Titulomigrupo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Grupo perteneciente:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Titulocompetencia"
+            />
+
+        <TextView
+            android:id="@+id/grupopertenecienteactividad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/Titulocompetencia"
+            tools:text="Grupo" />
+
+        <TextView
+            android:id="@+id/Titulotamaniomiactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Tamaño de la actividad:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/grupopertenecienteactividad"
+            />
+
+        <TextView
+            android:id="@+id/tamaniomiactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/grupopertenecienteactividad"
+            tools:text="Gru" />
+
+        <TextView
+            android:id="@+id/tamaniomiactiviadperson"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/grupopertenecienteactividad"
+            android:text="personas" />
+
+
+        <TextView
+            android:id="@+id/Titulolocalizacionactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Lugar de la actividad:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Titulotamaniomiactiviad"
+            />
+
+        <TextView
+            android:id="@+id/localizacionmiactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/Titulotamaniomiactiviad"
+            tools:text="localizacion" />
+
+        <TextView
+            android:id="@+id/Tituloduracionnactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Duración de la actividad:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Titulolocalizacionactiviad"
+            />
+
+        <TextView
+            android:id="@+id/duracionnmiactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/Titulolocalizacionactiviad"
+            tools:text="duracion" />
+
+
+        <TextView
+            android:id="@+id/Titulorelacionnactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Relación del equipo:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Tituloduracionnactiviad"
+            />
+
+        <TextView
+            android:id="@+id/ralacionnmiactiviad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Quitarsedelaactividad"
+            app:layout_constraintTop_toBottomOf="@id/Tituloduracionnactiviad"
+            tools:text="relacion" />
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

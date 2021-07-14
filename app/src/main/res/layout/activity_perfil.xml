@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/loginocono"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:src="@drawable/fotologo1"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <LinearLayout
+        android:id="@+id/fotogeneral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/commo_padding_default"
+        android:padding="@dimen/commo_padding_default"
+        app:layout_constraintTop_toBottomOf="@+id/cardlogin">
+
+        <ImageView
+            android:id="@+id/fotoperfil"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+
+            app:layout_constraintDimensionRatio="H,4:2"/>
+
+        <TextView
+            android:id="@+id/texto_Nombre_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Nombre del usuario:" />
+        <TextView
+            android:id="@+id/texto_Nombre_introducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Nombre del usuario:" />
+
+        <TextView
+            android:id="@+id/texto_biografia_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Biografia del usuario:" />
+        <TextView
+            android:id="@+id/texto_biografia_introducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Biografia del usuario:" />
+
+        <TextView
+            android:id="@+id/texto_fecha_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Fecha del usuario:" />
+        <TextView
+            android:id="@+id/texto_fecha_introducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Fecha del usuario:" />
+
+        <TextView
+            android:id="@+id/texto_Direccion_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Direccion del usuario:" />
+        <TextView
+            android:id="@+id/texto_Direccion_introducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Direccion del usuario:" />
+
+
+        <Button
+            android:id="@+id/btn_inicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/inicio"
+            android:clickable="true"
+            android:paddingTop="@dimen/commo_padding_default"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:backgroundTint="#03D3DA" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

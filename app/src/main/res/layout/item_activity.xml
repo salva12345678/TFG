@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_card_height_lo"
+    android:layout_marginTop="@dimen/common_padding_min"
+    android:layout_marginStart="@dimen/common_padding_min"
+    android:layout_marginEnd="@dimen/commo_padding_min">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarjetaactividad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/UnirseActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:layout_marginEnd="@dimen/commo_padding_default"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_add_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TituloActividadtarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            tools:text="Título de la actividad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/UnirseActividad"
+            app:layout_constraintTop_toTopOf="@id/UnirseActividad"
+            app:layout_constraintBottom_toBottomOf="@id/UnirseActividad"
+            />
+
+        <TextView
+            android:id="@+id/fechaActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            tools:text="Fecha de la Actividad"
+            app:layout_constraintEnd_toStartOf="@id/UnirseActividad"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TituloActividadtarjeta"/>
+
+        <TextView
+            android:id="@+id/DescripcionActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            tools:text="Descripción de la actividad"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintEnd_toStartOf="@id/UnirseActividad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fechaActividadTarjeta"/>
+        <TextView
+            android:id="@+id/PropietariotituloActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Creador de la actividad:"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/DescripcionActividadTarjeta"/>
+
+        <TextView
+            android:id="@+id/PropietarioActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/UnirseActividad"
+            app:layout_constraintTop_toBottomOf="@id/DescripcionActividadTarjeta"
+            tools:text="Creador" />
+
+        <TextView
+            android:id="@+id/tipoTituloActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:text="Tipo de actividad:"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PropietarioActividadTarjeta"/>
+
+        <TextView
+            android:id="@+id/tipoActividadTarjeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PropietarioActividadTarjeta"
+            tools:text="Tipos de actividades:" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

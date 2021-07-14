@@ -7,4 +7,78 @@
     <string name="miactividad">Mis actividades</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="name_login">Nombre de usuario</string>
+    <string name="helper_requirer">Requerido</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="register">¿Aún no tienes cuenta? Regístrate</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="foto_register">Url de la foto para el perfil </string>
+    <string name="biografia_register">Escribe algo sobre ti</string>
+    <string name="fecha_register">Fecha de nacimiento</string>
+    <string name="direccion_register">Localización</string>
+
+
+    <string name="dialog_delete_title">¿Eliminar tienda?</string>
+    <string name="dialog_delete_confirm">Eliminar</string>
+    <string name="dialog_delete_cancel">Cancelar</string>
+    <string name="dialog_options_title">¿Que desea hacer?</string>
+
+    <string name="description_img_photo">Imagen de la tienda</string>
+    <string name="description_store_add">Crear tienda</string>
+
+    <string name="hint_name">nombre de la tienda</string>
+    <string name="hint_phone">teléfono</string>
+    <string name="hint_website">url del sitio web</string>
+    <string name="hint_photo_url">url de la imagen</string>
+
+    <string name="helper_required">Requerido</string>
+
+    <string name="menu_save">Guardar</string>
+
+    <string name="main_error_no_website">Esta tienda no cuenta con un sitio web.</string>
+    <string name="main_error_no_resolve">No se encontró ninguna app compatible</string>
+
+    <string name="options_item_call">Llamar</string>
+    <string name="options_item_website">Ir al sition web</string>
+    <string name="person_add">Te has registrado correctamente</string>
+    <string name="vali_person">Bienvenido a Incontro</string>
+    <string name="failed_login">El usuario introducido o la contraseña no existe.</string>
+    <string name="inicio">Volver al inicio</string>
+    <string name="name_house">Nombre del establecimiento</string>
+    <string name="name_locale">Localización del lugar</string>
+    <string name="name_price">Precio del establecimeinto</string>
+    <string name="tipe_esta">Tipo de lugar</string>
+    <string name="name_date">Fecha de creación</string>
+    <string name="registrarse_lugar">Crear Establecimiento</string>
+    <string name="registrarse_grupo">Crear Grupo</string>
+    <string name="name_group">Nombre del grupo</string>
+    <string name="name_descipc">Proposito del grupo</string>
+    <string name="name_url">URL del la foto del grupo</string>
+    <string name="registrarse_actividad">Crear Actividad</string>
+    <string name="name_actividty">Nombre de la actividad</string>
+    <string name="name_descipcactivit">Descripcion de la actividad</string>
+    <string name="name_dateactivity">Fecha del día de la actividad</string>
+    <string name="house_register">Establecimiento registrado correctamente</string>
+    <string name="Grupo_register">Grupo creado correctamente</string>
+    <string name="nounion">No puedes unirte a tu propio grupo</string>
+    <string name="maxperson">Numero maximo de personas en el grupo</string>
+    <string name="uniongroup">Te has unido al grupo</string>
+    <string name="groupmember">Ya eres miembro del grupo</string>
+    <string name="competence_add">Competencia añadida</string>
+    <string name="actividda_add">Actividad añadida</string>
+    <string name="Activity_register">Actividad registrada.</string>
+    <string name="noactividaduser">No te puedes unir a tu propia actividad.</string>
+    <string name="maxpersonactivity">Número máximo de personas en la actividad</string>
+    <string name="actividadmember">Ya estás en la actividad</string>
+    <string name="unionactivity">Te has unido a la actividad</string>
 </resources>

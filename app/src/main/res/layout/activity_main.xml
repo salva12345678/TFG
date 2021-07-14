@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containermain"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,13 +26,14 @@
                 android:layout_width="@dimen/card_img_size"
                 android:layout_height="@dimen/card_img_size"
                 android:src="@drawable/fotologo"
+                android:clickable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +42,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:clickable="true"
-                app:srcCompat="@drawable/ic_menu_ajustes" />
+                app:srcCompat="@drawable/ic_house" />
+
+            <ImageButton
+                android:id="@+id/perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/icono1"
+                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintStart_toEndOf="@+id/house"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_perfik" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
