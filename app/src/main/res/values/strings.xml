@@ -81,4 +81,7 @@
     <string name="maxpersonactivity">Número máximo de personas en la actividad</string>
     <string name="actividadmember">Ya estás en la actividad</string>
     <string name="unionactivity">Te has unido a la actividad</string>
+    <string name="busqueda">Buscar</string>
+    <string name="nogroup">Debes crear al menos un grupo</string>
+    <string name="emply_login">Debe rellenar los campos.</string>
 </resources>

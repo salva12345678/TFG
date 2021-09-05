@@ -2,6 +2,8 @@ package com.example.tfgprueba2
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -37,9 +39,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         mBinding.botonCrearActividad.setOnClickListener {
-
-            enviaracreacionactividad()
-
+            var usuario=who()
+            var db = conect()
+            db?.Conect()
+            if(db.eresmiembrodeunaactividad(usuario.idusuario)) {
+                enviaracreacionactividad()
+            }
+            else{
+                Toast.makeText(this, R.string.nogroup, Toast.LENGTH_SHORT).show()
+            }
         }
 
         mBinding.perfil.setOnClickListener {
@@ -50,7 +58,36 @@ class MainActivity : AppCompatActivity() {
             enviaracreacionhouse()
         }
 
+        mBinding.busquedaavanzada.setOnClickListener {
 
+            enviarabusquedad()
+        }
+
+        mBinding.recargar.setOnClickListener {
+            recargarpágina()
+        }
+    }
+
+    fun enviarabusquedad(){
+        val i = Intent(this, Busqueda::class.java)
+        var usuario=who()
+        i.putExtra("idUsuario", usuario )
+
+        startActivity(i)
+
+    }
+
+    fun recargarpágina(){
+        val i = Intent(this, MainActivity::class.java)
+        var usuario=who()
+        i.putExtra("idUsuario",usuario.idusuario)
+        i.putExtra("Nombre",usuario.nombre)
+        i.putExtra("contraseña",usuario.contraseña)
+        i.putExtra("foto",usuario.foto)
+        i.putExtra("biografia",usuario.biografia)
+        i.putExtra("fecha",usuario.fecha)
+        i.putExtra("direccion",usuario.direccion)
+        startActivity(i)
 
     }
 
@@ -85,20 +122,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun enviaracreaciongrupo1(){
-        val i = Intent(this, CrearGrupoActivity2::class.java)
-        var usuario=who()
-        i.putExtra("idUsuario", usuario as Serializable?)
-        startActivity(i)
-    }
 
-    fun recibidoacreaciongrupo2(){
-        val objetoIntent:Intent=intent
 
-        var usuario = intent.getSerializableExtra("idUsuario") as Usuario?
-
-        usuario?.idusuario
-    }
 
 
 
@@ -131,6 +156,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun busqueda():String?{
+
+        val objetoIntent:Intent=intent
+        var direccion=objetoIntent.getStringExtra("cadenaString")
+        return (direccion)
+
+    }
+
 
     ///cargaremos los datos del usuario
     fun who():Usuario{
@@ -146,8 +179,13 @@ class MainActivity : AppCompatActivity() {
         var fecha= objetoIntent.getStringExtra("fecha")
         var direccion=objetoIntent.getStringExtra("direccion")
 
-        val usuario= Usuario(idusuario=id, nombre= nombre.toString(), contraseña=contraseña.toString(),foto=foto.toString(), biografia=biografia.toString(), fecha=fecha.toString(), direccion=direccion.toString())
+        val usuario= Usuario(idusuario=id, nombre= nombre.toString(),
+            contraseña=contraseña.toString(),foto=foto.toString(),
+            biografia=biografia.toString(), fecha=fecha.toString(),
+            direccion=direccion.toString())
+
         return usuario
+
     }
 
 

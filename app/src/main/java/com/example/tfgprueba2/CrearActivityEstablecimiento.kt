@@ -109,21 +109,30 @@ class CrearActivityEstablecimiento : AppCompatActivity() {
 
             }
 
+            if((findViewById(R.id.sign_establecimiento) as EditText).text.toString().trim().isEmpty() || (findViewById(R.id.sign_localizacionlugar) as EditText).text.toString().trim().isEmpty()
+                ||(findViewById(R.id.sign_preciolugar) as EditText).text.toString().trim().isEmpty()||(findViewById(R.id.sign_fechalugar) as EditText).text.toString().trim().isEmpty()
+                ){
 
-            db?.intoEstablecimiento(lugar,usuario.idusuario) ///metemos el establecimiento
-
-
-            db?.intoPara(datos,lugar.idLugar)               //unimos los dos parametros
-            db?.intoParaValordebil(datos,lugar.idLugar)
-
-
-
-            db?.intoParalugar(datos1,lugar.idLugar)               //unimos los dos parametros
-            db?.intoParaValordebillugar(datos1,lugar.idLugar)
+                Toast.makeText(this, R.string.emply_login, Toast.LENGTH_SHORT).show()
+            }
+            else {
 
 
-            Toast.makeText(this, R.string.house_register, Toast.LENGTH_SHORT).show()
-            enviaraperfil()
+                db?.intoEstablecimiento(lugar, usuario.idusuario) ///metemos el establecimiento
+
+
+                db?.intoPara(datos, lugar.idLugar)               //unimos los dos parametros
+                db?.intoParaValordebil(datos, lugar.idLugar)
+
+
+
+                db?.intoParalugar(datos1, lugar.idLugar)               //unimos los dos parametros
+                db?.intoParaValordebillugar(datos1, lugar.idLugar)
+
+
+                Toast.makeText(this, R.string.house_register, Toast.LENGTH_SHORT).show()
+                enviaraperfil()
+            }
         }
 
 

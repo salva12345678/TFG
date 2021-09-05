@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Busqueda">
+
+    <LinearLayout
+        android:id="@+id/lookfor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:padding="@dimen/commo_padding_default">
+
+        <TextView
+            android:id="@+id/Titulobus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="10dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeStepGranularity="1sp"
+
+
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Busqueda avanzada:" />
+
+        <TextView
+            android:id="@+id/TituloMododebusqueda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Modo de busqueda. Selecciona una de ellas" />
+
+
+
+        <CheckBox
+            android:id="@+id/checkBoxunion"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Combinación" />
+        <CheckBox
+            android:id="@+id/checkBoxinterseccion"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Intersección" />
+
+        <TextView
+            android:id="@+id/Titulotiposdellook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Categorías posibles:" />
+
+        <CheckBox
+            android:id="@+id/checkBoxIdioma"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Idioma" />
+
+        <Spinner
+            android:id="@+id/mySpinneridiomabusquedad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/checkBoxTamanio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Tamaño de la actividad" />
+
+        <Spinner
+            android:id="@+id/mySpinnertamaiobusquedad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxfecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Fecha" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titulo_fechabusqueda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_date"
+            app:endIconMode="clear_text"
+            android:maxLength="@integer/counter_max_line"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_date"
+            app:helperText="@string/helper_requirer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_fechabusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="@integer/counter_max_line"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+        android:id="@+id/checkBoxDuracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/commo_padding_min"
+        android:text="Duración de la actividad" />
+
+        <Spinner
+            android:id="@+id/mySpinneduracionbusquedad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/checkBoxLugarActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Lugar de la actividad" />
+
+        <Spinner
+            android:id="@+id/mySpinnelugarbusquedad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxtipoActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Tipo de actividad" />
+
+        <Spinner
+            android:id="@+id/mySpinnetipobusquedad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/checkBoxcompetenActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Competencias" />
+
+        <Spinner
+            android:id="@+id/mySpinnecompetenbusquedad"
+            android:hint="@string/tipe_esta"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            app:endIconMode="clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/Titulotiporankin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:paddingHorizontal="@dimen/commo_padding_default"
+            android:text="Modo del ranking.  Selecciona una de ellas" />
+
+        <CheckBox
+            android:id="@+id/checkBoxmodo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="La actividad más famosa" />
+
+        <CheckBox
+            android:id="@+id/checkBoxmodo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="La actividad del grupo más importante" />
+
+        <CheckBox
+            android:id="@+id/checkBoxmodo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Mayor número de competencias" />
+
+        <CheckBox
+            android:id="@+id/checkBoxmodo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commo_padding_min"
+            android:text="Las actividad más libre" />
+
+
+
+
+        <Button
+            android:id="@+id/btn_Hacerbusqueda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/busqueda"
+            android:clickable="true"
+            android:paddingTop="@dimen/commo_padding_default"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            android:layout_marginHorizontal="@dimen/commo_padding_default"
+            android:backgroundTint="#03D3DA"
+            app:layout_constraintTop_toBottomOf="@+id/login_complete"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

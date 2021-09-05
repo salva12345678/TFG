@@ -61,52 +61,8 @@
             app:layout_constraintEnd_toStartOf="@id/UnirseActividad"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fechaActividadTarjeta"/>
-        <TextView
-            android:id="@+id/PropietariotituloActividadTarjeta"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            android:layout_marginHorizontal="@dimen/commo_padding_default"
-            android:text="Creador de la actividad:"
-            android:layout_marginTop="@dimen/commo_padding_min"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/DescripcionActividadTarjeta"/>
 
-        <TextView
-            android:id="@+id/PropietarioActividadTarjeta"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/commo_padding_default"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="@dimen/commo_padding_min"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/UnirseActividad"
-            app:layout_constraintTop_toBottomOf="@id/DescripcionActividadTarjeta"
-            tools:text="Creador" />
 
-        <TextView
-            android:id="@+id/tipoTituloActividadTarjeta"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            android:layout_marginHorizontal="@dimen/commo_padding_default"
-            android:text="Tipo de actividad:"
-            android:layout_marginTop="@dimen/commo_padding_min"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/PropietarioActividadTarjeta"/>
-
-        <TextView
-            android:id="@+id/tipoActividadTarjeta"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/commo_padding_default"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="@dimen/commo_padding_min"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/PropietarioActividadTarjeta"
-            tools:text="Tipos de actividades:" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

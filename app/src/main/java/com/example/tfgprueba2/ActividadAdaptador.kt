@@ -11,7 +11,7 @@ import com.example.tfgprueba2.Dataclass.GruposParametros
 import com.example.tfgprueba2.databinding.ItemActivityBinding
 
 
-class ActividadAdaptador (val actividades: MutableList<Actividad>,val idUsuario:Int,private var listener: ActividadAdaptador.OnClickListener,val tiposActividad:List<GruposParametros>,val creadores:MutableList<String>): RecyclerView.Adapter<ActividadAdaptador.ViewHolder>(){
+class ActividadAdaptador (val actividades: MutableList<Actividad>,val idUsuario:Int,private var listener: ActividadAdaptador.OnClickListener): RecyclerView.Adapter<ActividadAdaptador.ViewHolder>(){
 
     private lateinit var mContext: Context
 
@@ -36,7 +36,7 @@ class ActividadAdaptador (val actividades: MutableList<Actividad>,val idUsuario:
                     var numeromax=db?.ObtenermiembrosactividadGruposmaxpermitido(actividad.idActividad)
                     var numero=db?.Obtenermiembrosdeunaactividad(actividad.idActividad)
 
-                    if (numeromax==numero){
+                    if (numeromax <= numero){
                         Toast.makeText(mContext, R.string.maxpersonactivity, Toast.LENGTH_SHORT).show()
                     }
                     else{
@@ -69,16 +69,13 @@ class ActividadAdaptador (val actividades: MutableList<Actividad>,val idUsuario:
 
     override fun onBindViewHolder(holder: ActividadAdaptador.ViewHolder, position: Int) {
         var actividad=actividades.get(position)
-        var tipos=tiposActividad.get(position)
-        var creador=creadores.get(position)
+
         with(holder){
 
             setListener(actividad,idUsuario)
             binding.TituloActividadtarjeta.text=actividad.nombre
             binding.fechaActividadTarjeta.text=actividad.Fecha
             binding.DescripcionActividadTarjeta.text=actividad.descripcion
-            binding.tipoActividadTarjeta.text=tipos.valor
-            binding.PropietarioActividadTarjeta.text=creador
 
         }
 

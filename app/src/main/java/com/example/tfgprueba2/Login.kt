@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tfgprueba2.Dataclass.Usuario
 import com.example.tfgprueba2.databinding.ActivityLoginBinding
+import java.math.BigInteger
+import java.security.MessageDigest
 
 class Login : AppCompatActivity() {
 
@@ -34,12 +36,18 @@ class Login : AppCompatActivity() {
         botoniniciar.setOnClickListener {
             var db = conect()
             db?.Conect()
-            existe=db?.buscarUsuario((findViewById(R.id.login_name1) as EditText).text.toString().trim(),(findViewById(R.id.login_pass1) as EditText).text.toString().trim())
+            existe=db?.buscarUsuario((findViewById(R.id.login_name1) as EditText).text.toString().trim(),md5Hash((findViewById(R.id.login_pass1) as EditText).text.toString().trim()))
+
+
+            if((findViewById(R.id.login_name1) as EditText).text.toString().trim().isEmpty() || (findViewById(R.id.login_pass1) as EditText).text.toString().trim().isEmpty() ){
+
+                Toast.makeText(this, R.string.emply_login, Toast.LENGTH_SHORT).show()
+            }
 
             if(existe){
                 //enviamos la infprmacion del usuario
                 Toast.makeText(this, R.string.vali_person, Toast.LENGTH_SHORT).show()
-                var usuario:Usuario=db?.selectUsuario((findViewById(R.id.login_name1) as EditText).text.toString().trim(),(findViewById(R.id.login_pass1) as EditText).text.toString().trim())
+                var usuario:Usuario=db?.selectUsuario((findViewById(R.id.login_name1) as EditText).text.toString().trim(),md5Hash((findViewById(R.id.login_pass1) as EditText).text.toString().trim()))
                 val i = Intent(this, MainActivity::class.java)
                 i.putExtra("idUsuario",usuario.idusuario)
                 i.putExtra("Nombre",usuario.nombre)
@@ -58,6 +66,12 @@ class Login : AppCompatActivity() {
         }
 
 
+    }
+
+    fun md5Hash(str: String): String {
+        val md = MessageDigest.getInstance("MD5")
+        val bigInt = BigInteger(1, md.digest(str.toByteArray(Charsets.UTF_8)))
+        return String.format("%032x", bigInt)
     }
 
 

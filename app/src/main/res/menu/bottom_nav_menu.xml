@@ -27,7 +27,7 @@
         android:id="@+id/Misactividades"
         android:title="@string/miactividad"
         app:showAsAction="never"
-        android:icon="@drawable/ic_miactividad"
+        android:icon="@drawable/game_activity_games_icon_161378"
 
         />
 

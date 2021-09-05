@@ -49,7 +49,7 @@ class conect {
         connect()
         //this.disconnect();
 
-        println("connection status:$status")
+        //println("connection status:$status")
     }
 
     @SuppressLint("newApi")
@@ -59,7 +59,7 @@ class conect {
                 Class.forName("org.postgresql.Driver")
                 connection = DriverManager.getConnection(url, user, pass)
                 status = true
-                println("connected:$status")
+               // println("connected:$status")
             } catch (e: Exception) {
                 status = false
                 print(e.message)
@@ -126,7 +126,7 @@ class conect {
             val st = c.createStatement()
             val rs = st.executeQuery(stsql)
             rs.next()
-            println(rs.getString(1))
+            //println(rs.getString(1))
             c.close()
         } catch (e: Exception) {
             e.printStackTrace()
@@ -360,7 +360,7 @@ class conect {
 
 
                 while (r){
-                    println(rs?.getBoolean(1))
+                    //println(rs?.getBoolean(1))
                     Totalpar.add((rs?.getBoolean(1).toString()))
 
                     r=rs.next()
@@ -1636,7 +1636,7 @@ class conect {
 
                 }
 
-                // println(r)
+
                 //connection1?.close()
 
             } catch (e: Exception) {
@@ -2350,7 +2350,7 @@ class conect {
 
                 }
 
-                // println(r)
+
                 //connection1?.close()
 
             } catch (e: Exception) {
@@ -2381,6 +2381,46 @@ class conect {
                         "\tFROM public.\"Actividad\";"
                 val st = connection?.createStatement()
                 var rs = st?.executeQuery(stsql)
+                var r = rs!!.next()
+                //aqui recogeremos los datos y devolveremos los grupos
+                while (r){
+
+                    var actividad= Actividad(rs?.getInt(1),rs?.getInt(2),rs?.getInt(3),rs?.getString(4),rs?.getString(5),rs?.getString(6))
+
+                    actividades.add(actividad)
+
+                    r=rs.next()
+
+                }
+                //connection1?.close()
+
+            } catch (e: Exception) {
+                status = false
+                print(e.message)
+                e.printStackTrace()
+            }
+        }
+        thread.start()
+        try {
+            thread.join()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            status = false
+        }
+
+        return actividades
+
+    }
+
+    fun selectActivityconfi(cadena:String?): MutableList<Actividad> {
+
+        val thread = Thread {
+            try {
+                Class.forName("org.postgresql.Driver")
+                //var connection1: Connection?  = DriverManager.getConnection(url, user, pass)
+
+                val st = connection?.createStatement()
+                var rs = st?.executeQuery(cadena)
                 var r = rs!!.next()
                 //aqui recogeremos los datos y devolveremos los grupos
                 while (r){
@@ -2528,19 +2568,20 @@ class conect {
 
 
     fun ObtenermiembrosactividadGruposmaxpermitido(idActividad: Int): Int {
-        var idvalor:Int=0
+        var idvalor=0
         var valor=0
         val thread = Thread {
             try {
                 Class.forName("org.postgresql.Driver")
                 //var connection1: Connection?  = DriverManager.getConnection(url, user, pass)
-                var stsql = "SELECT \"idConfiguracion\", \"idParametro\", \"idValor\"\n" +
+                var stsql = "SELECT  \"idValor\"\n" +
                         "\tFROM public.\"ConfiguracionTieneValorParametro\" where \"idConfiguracion\"='$idActividad' and \"idParametro\"='7';"
                 var st = connection?.createStatement()
                 var rs = st?.executeQuery(stsql)
                 var r = rs!!.next()
 
                 idvalor=rs?.getInt(1)
+
 
                 stsql = "SELECT  valor\n" +
                         "\tFROM public.\"valorEntero\" where \"idParametro\"='7' and \"idValor\"='$idvalor';"
@@ -2550,6 +2591,8 @@ class conect {
                 r = rs!!.next()
 
                 valor=rs?.getInt(1)
+
+
 
             } catch (e: Exception) {
                 status = false
@@ -3205,7 +3248,7 @@ class conect {
 
                 }
 
-                // println(r)
+
                 //connection1?.close()
 
             } catch (e: Exception) {
@@ -3223,6 +3266,43 @@ class conect {
         }
 
         return Totalpar
+    }
+
+
+
+    fun eresmiembrodeunaactividad(idusuario: Int): Boolean {
+        var esmiembro=true
+        val thread = Thread {
+            try {
+                Class.forName("org.postgresql.Driver")
+                //var connection1: Connection?  = DriverManager.getConnection(url, user, pass)
+                val stsql = "SELECT count(*)\n" +
+                        "\tFROM public.\"Grupos\" where \"idUsuario\"='$idusuario';"
+                val st = connection?.createStatement()
+                val rs = st?.executeQuery(stsql)
+                var r = rs!!.next()
+
+                if(0==rs?.getInt(1)){
+                    esmiembro=false
+                }
+
+
+                //connection1?.close()
+
+            } catch (e: Exception) {
+                status = false
+                print(e.message)
+                e.printStackTrace()
+            }
+        }
+        thread.start()
+        try {
+            thread.join()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            status = false
+        }
+        return esmiembro
     }
 
 

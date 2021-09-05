@@ -102,6 +102,13 @@ class CrearGrupoActivity2 : AppCompatActivity() {
 
             }
 
+            if((findViewById(R.id.sign_nombre_grupo) as EditText).text.toString().trim().isEmpty() || (findViewById(R.id.sign_fechagrupo) as EditText).text.toString().trim().isEmpty()
+                ||(findViewById(R.id.sign_grupo_proposito) as EditText).text.toString().trim().isEmpty()||(findViewById(R.id.sign_grupo_url) as EditText).text.toString().trim().isEmpty()
+            ){
+                Toast.makeText(this, R.string.emply_login, Toast.LENGTH_SHORT).show()
+            }
+            else{
+
             db?.intoGrupo(grupo)
 
 
@@ -118,6 +125,7 @@ class CrearGrupoActivity2 : AppCompatActivity() {
 
             Toast.makeText(this, R.string.Grupo_register, Toast.LENGTH_SHORT).show()
             enviaraperfil()
+            }
         }
 
 

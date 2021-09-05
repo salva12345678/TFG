@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.anurag.multiselectionspinner.MultiSelectionSpinnerDialog
+
 import com.example.tfgprueba2.Dataclass.Actividad
 import com.example.tfgprueba2.Dataclass.Grupos
 import com.example.tfgprueba2.Dataclass.Usuario
@@ -328,47 +328,56 @@ class CrearActividad : AppCompatActivity() {
                 Fecha=(findViewById(R.id.sign_fechaactividad) as EditText).text.toString().trim()
 
             }
-            ////crear actividad
-            db?.intoActividad(actividad)
 
-            var idLugar=db?.buscarDatosdellugar(items2)
-            //REGISTRAMOS EL LUGAR
+            if((findViewById(R.id.sign_descripcion) as EditText).text.toString().trim().isEmpty() || (findViewById(R.id.sign_nombreactividad) as EditText).text.toString().trim().isEmpty()
+                ||(findViewById(R.id.sign_fechaactividad) as EditText).text.toString().trim().isEmpty()){
 
-            db?.intoSeRealiza(idLugar[0].idParametro,actividad.idActividad)
-            /// EL LUGAR QUEDA REGISTRADO Y SE ANULA
-            db?.actualizarlugar(idLugar[0].idParametro)
+                Toast.makeText(this, R.string.emply_login, Toast.LENGTH_SHORT).show()
+            }
+            else {
 
-            //////////creamos la configuración
-            db?.intoconfiguraci(Nconfiguraciones+1)
-            db?.intoActividadTieneConfi(actividad.idActividad,Nconfiguraciones+1)
+                ////crear actividad
+                db?.intoActividad(actividad)
 
-            /////creamos el tamaño del equipo
-            var datos1equipo=db?.buscarDatostamanioequipo(items3)
-            db?.intoParaConfi(datos1equipo,Nconfiguraciones+1)
-            db?.intoParaValorConfi(datos1equipo,Nconfiguraciones+1)
+                var idLugar = db?.buscarDatosdellugar(items2)
+                //REGISTRAMOS EL LUGAR
 
-            //////// duracion de la actividad
-            var duracionequipo=db?.buscarDatosduracionactividad(items4)
-            db?.intoParaConfi(duracionequipo,Nconfiguraciones+1)
-            db?.intoParaValorConfi(duracionequipo,Nconfiguraciones+1)
+                db?.intoSeRealiza(idLugar[0].idParametro, actividad.idActividad)
+                /// EL LUGAR QUEDA REGISTRADO Y SE ANULA
+                db?.actualizarlugar(idLugar[0].idParametro)
 
-            ///////////tipo de relacion
-            var tipoRelacion=db?.buscarDatosrelacion(items5)
-            db?.intoParaConfi(tipoRelacion,Nconfiguraciones+1)
-            db?.intoParaValorConfi(tipoRelacion,Nconfiguraciones+1)
+                //////////creamos la configuración
+                db?.intoconfiguraci(Nconfiguraciones + 1)
+                db?.intoActividadTieneConfi(actividad.idActividad, Nconfiguraciones + 1)
 
-            /////////
-            ////competenciaaaaaasssssssssssss
-            var tipocompetencias=db?.buscarCompetencias(competencias)
-            db?.intoCompetencia(tipocompetencias,Nconfiguraciones+1)
-            //////tipo de actividad
-            var tipoactividad=db?.buscarTipoActividad(tipoactiviadades)
-            db?.intotipoActividad(tipoactividad,Nconfiguraciones+1)
+                /////creamos el tamaño del equipo
+                var datos1equipo = db?.buscarDatostamanioequipo(items3)
+                db?.intoParaConfi(datos1equipo, Nconfiguraciones + 1)
+                db?.intoParaValorConfi(datos1equipo, Nconfiguraciones + 1)
 
-            db?.intouseractivity(usuario.idusuario, actividad.idActividad)
+                //////// duracion de la actividad
+                var duracionequipo = db?.buscarDatosduracionactividad(items4)
+                db?.intoParaConfi(duracionequipo, Nconfiguraciones + 1)
+                db?.intoParaValorConfi(duracionequipo, Nconfiguraciones + 1)
 
-            Toast.makeText(this, R.string.Activity_register, Toast.LENGTH_SHORT).show()
-            enviaraperfil()
+                ///////////tipo de relacion
+                var tipoRelacion = db?.buscarDatosrelacion(items5)
+                db?.intoParaConfi(tipoRelacion, Nconfiguraciones + 1)
+                db?.intoParaValorConfi(tipoRelacion, Nconfiguraciones + 1)
+
+                /////////
+                ////competenciaaaaaasssssssssssss
+                var tipocompetencias = db?.buscarCompetencias(competencias)
+                db?.intoCompetencia(tipocompetencias, Nconfiguraciones + 1)
+                //////tipo de actividad
+                var tipoactividad = db?.buscarTipoActividad(tipoactiviadades)
+                db?.intotipoActividad(tipoactividad, Nconfiguraciones + 1)
+
+                db?.intouseractivity(usuario.idusuario, actividad.idActividad)
+
+                Toast.makeText(this, R.string.Activity_register, Toast.LENGTH_SHORT).show()
+                enviaraperfil()
+            }
         }
 
 

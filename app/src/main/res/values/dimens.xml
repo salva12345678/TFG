@@ -15,5 +15,5 @@
     <dimen name="photo_size_thumb">88dp</dimen>
     <dimen name="item_card_height_low">240dp</dimen>
     <dimen name="item_card_height_low_">200dp</dimen>
-    <dimen name="item_card_height_lo">190dp</dimen>
+    <dimen name="item_card_height_lo">150dp</dimen>
 </resources>

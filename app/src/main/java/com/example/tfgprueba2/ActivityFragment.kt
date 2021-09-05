@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,22 +44,29 @@ class ActivityFragment: Fragment(),ActividadAdaptador.OnClickListener {
 
         var user=(activity as MainActivity?)?.who()
 
+        var cadena=(activity as MainActivity?)?.busqueda()
+
         db?.Conect()
 
-        actividades=db?.selectActivity() //de aqui sacamos los datos de la base de datos
+        if(cadena.isNullOrBlank()){
+            actividades=db?.selectActivity() //de aqui sacamos los datos de la base de datos
+        }
+        else{
+            actividades=db?.selectActivityconfi(cadena)
+        }
 
-        var tipodeactividades=db?.buscarDatosactividades()
-
-        var ordenado=tipodeactividades.sortedBy { it.idParametro }
 
 
+        if(actividades.isEmpty()){
 
-        var creadores=db?.buscardueños()
+            Toast.makeText(context,"No se ha encontrado ninguna actividad con esas caracteristicas", Toast.LENGTH_SHORT).show()
+
+        }
 
 
         mLinearLayoutManager= LinearLayoutManager(context )
 
-        val adapter1=ActividadAdaptador(actividades,user!!.idusuario,this,ordenado,creadores)
+        val adapter1=ActividadAdaptador(actividades,user!!.idusuario,this)
 
 
         binding.recycleviewactividad.apply {
